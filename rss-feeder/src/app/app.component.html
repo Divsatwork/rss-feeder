@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<html lang="en" >
+    <p *ngIf="showDesc">RSS Feeder by <a target="_blank" href="https://www.linkedin.com/in/divyansh-chopra/">Divyansh Chopra</a></p>
+    <button *ngIf="!showDesc" style="background-color: #e7e7e7; color: black; font-size: 20px; border-radius: 12px;" onClick="window.location.reload();">Back</button>
+<body>
+
+  <form class="searchform cf" #frm="ngForm" *ngIf="showForm" method="GET" (ngSubmit)="onSubmit(frm.value);">
+  <input type="text" placeholder="Enter the URL here" required name="url" id="url" ngModel>
+  <button type="submit">Load</button>
+  </form>
+
+  <div *ngIf="!showForm">
+    <div *ngFor="let feedItem of feed">
+      <div class="card">
+        <div class="container">
+          <h4><b>{{feedItem.title}}</b></h4> 
+          <p>{{feedItem.summary}}</p> 
+          <a href="{{feedItem.id}}">Read More..</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="loader" *ngIf="loading"></div>
+  
+  <div *ngIf="showError">
+    <h2>No feed could be fetched from the provided url</h2>
+  </div>
+
+</body>
+
+</html>
