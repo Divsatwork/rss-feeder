@@ -6,7 +6,8 @@ export class FeedService {
   constructor(private http: HttpClient) { }
 
   getData(url: string) {
-    const localAddress = 'https://localhost:8888/feed?url=' + url;
+    const localAddress = 'localhost:8888/feed?url=' + url;
+    console.log('Sending request to: ', localAddress);
     return this.http.get(localAddress);
   }
 }

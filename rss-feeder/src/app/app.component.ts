@@ -36,8 +36,9 @@ export class AppComponent {
         this.showError = true;
       }
     }, err => {
-      console.log('Error while fetching data from server!');
+      console.log('Error while fetching data from server!', err);
       this.showError = true;
+      this.loading = false;
     });
   }
 }
