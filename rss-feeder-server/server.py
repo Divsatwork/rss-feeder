@@ -60,8 +60,8 @@ class feed:
 if __name__ == "__main__":
     app = MyApplication(urls, globals())
 
-    # ssl_cert = 'myserver.crt'
-    # ssl_key = 'myserver.key'
-    # CherryPyWSGIServer.ssl_certificate = ssl_cert
-    # CherryPyWSGIServer.ssl_private_key = ssl_key
+    ssl_cert = 'myserver.crt'
+    ssl_key = 'myserver.key'
+    CherryPyWSGIServer.ssl_certificate = ssl_cert
+    CherryPyWSGIServer.ssl_private_key = ssl_key
     app.run(port=8888)
