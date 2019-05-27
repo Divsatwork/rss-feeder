@@ -10,11 +10,11 @@ Libraries used for Python:
 
 The UI has been taken from a pen from codepen.io and is under the MIT license.
 
-In order to run this locally, simply take the pull of the repo.
+In order to run this locally, simply take the pull of the repo. Pip install the requirements.txt in the rss-feeder-server folder.
 
 - To run the server:
 1.Browse to the rss-feeder-server folder.
-2.Run 'python server.py'
+2.Run 'python server.py'.
 3.If PEM passphrase is asked: enter '1234'
 
 - To run the dashboard:
